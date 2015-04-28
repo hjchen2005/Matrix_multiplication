@@ -5,8 +5,15 @@
 using namespace std;
 
 int main(){
+	double a[x][y],b[m][n],c[x][n];
+	for (int row = 0; row <x; j++){
+		for (int col = 0; col<n; k++){
+			a[col][row]=2;
+			b[col][row]=3;
+		}
+	}
 	_int64 ctr1 = 0, ctr2 = 0, freq = 0;
-	int acc = 0, iter=0;
+	int acc = 0;//, iter=0;
 	if (QueryPerformanceCounter((LARGE_INTEGER *)&ctr1) != 0) {
 		multiplication(c,b,a);
 		
