@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstdlib>
-//#include <fstream>
 //#include "dataENtry.cpp"
 
 using namespace std;
@@ -9,6 +8,18 @@ using namespace std;
 #define y 8
 #define m 8
 #define n 8
+
+void multiplication(int i, int j, int c[][8], int a[][8], int b[][8]);
+void multiplication(int i, int j, int c[][8], int a[][8], int b[][8]){
+	for (i = 0; i<x; i++){
+		for (j = 0; j<n; j++){
+			c[i][j] = 0;
+			for (int k = 0; k<m; k++){
+				c[i][j] = c[i][j] + a[i][k] * b[k][j];
+			}
+		}
+	}
+}
 
 int main(int argc, const char* argv[]){
 
@@ -81,14 +92,17 @@ int main(int argc, const char* argv[]){
         cout << "\n\n";
     }
  
-	for(i=0;i<x;i++){
+
+	multiplication(i, j, c,a,b);
+
+/*	for(i=0;i<x;i++){
             for(j=0; j<n;j++){
                 c[i][j]=0;
                 for(int k=0;k<m;k++){
                     c[i][j]=c[i][j]+a[i][k]*b[k][j];
                 }
             }
-        }
+        }*/
  
         cout<<"\n\nMultiplication of Matrix A and Matrix B :\n\n";
  
