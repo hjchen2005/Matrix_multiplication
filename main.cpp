@@ -6,10 +6,10 @@ using namespace std;
 
 int main(){
 	_int64 ctr1 = 0, ctr2 = 0, freq = 0;
-	int acc = 0, i=0;
-	if (QueryPerformanceCounter((LARGE_INTEGER *)&ctr1) != 0){
-		for (i = 0; i < 100; i++)
-			acc++;
+	int acc = 0, iter=0;
+	if (QueryPerformanceCounter((LARGE_INTEGER *)&ctr1) != 0) {
+		multiplication(c,b,a);
+		
 		QueryPerformanceCounter((LARGE_INTEGER *)&ctr2);
 		cout << "Start value: " << ctr1 << endl;
 		cout << "ENd value: " << ctr2 << endl;
