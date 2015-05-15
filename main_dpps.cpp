@@ -10,7 +10,7 @@ int main(){
 	_int64 ctr1 = 0, ctr2 = 0, freq = 0;
 	
 	if (QueryPerformanceCounter((LARGE_INTEGER *)&ctr1) != 0) {
-		for (int tests=0; tests<10; tests++){
+		for (int tests = 0; tests < 10; tests++){
 			QueryPerformanceCounter((LARGE_INTEGER *)&ctr2);
 			cout << "Start value: " << ctr1 << endl;
 			
