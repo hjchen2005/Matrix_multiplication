@@ -3,7 +3,11 @@
 
 #include <smmintrin.h>
 
-void matrix_multiplication_dpps(float A[x][y], float B[m][n], float S[x][n]){
+#define size 4
+
+void matrix_multiplication_dpps(float A[size][size], float B[size][size], float S[size][size]);
+
+void matrix_multiplication_dpps(float A[size][size], float B[size][size], float S[size][size]){
     
     const int mask = 0x1F;
     
@@ -25,19 +29,11 @@ void matrix_multiplication_dpps(float A[x][y], float B[m][n], float S[x][n]){
                 
                 v4 = _mm_set_ps(B[i][k + 4], B[i][k + 5], B[i][k + 6], B[i][k + 7]);
                 
-                
-                
                 s = _mm_dp_ps(v1, v3, mask);
-                
-                
                 
                 S[i][j] += s.m128_f32[0] + s.m128_f32[1] + s.m128_f32[2] + s.m128_f32[3];
                 
-                
-                
                 s = _mm_dp_ps(v2, v4, mask);
-                
-                
                 
                 S[i][j] += s.m128_f32[0] + s.m128_f32[1] + s.m128_f32[2] + s.m128_f32[3];
                 
